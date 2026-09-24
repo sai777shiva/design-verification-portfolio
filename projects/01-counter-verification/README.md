@@ -75,7 +75,17 @@ The run also produces `build/counter_4bit.vcd` for waveform inspection.
 `debug/counter_4bit_buggy.sv` intentionally gives enable higher priority than
 reset. `debug/bug_report.md` documents the failure, root cause, correction and
 regression protection.
+## Simulation Results
 
+The corrected RTL completed 126 automated checks with zero errors. The DUT output matched the independent reference model across reset, hold, increment, wraparound, reset-priority and pseudo-random scenarios.
+
+![Passing counter regression waveform](docs/counter_waveform_pass.png)
+
+An intentional priority defect was introduced by checking `enable` before `reset`. When both signals were asserted, the DUT incremented instead of resetting. The self-checking testbench detected the mismatch and increased the error count.
+
+![Reset-priority bug waveform](docs/counter_waveform_reset_priority_bug.png)
+
+[Run the verified design on EDA Playground](https://www.edaplayground.com/x/97aV)
 ## Interview Summary
 
 I verified a synchronous 4-bit counter by first converting its specification
