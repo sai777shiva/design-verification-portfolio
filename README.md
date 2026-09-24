@@ -9,7 +9,9 @@ clear interview explanation.
 
 ### 1. SystemVerilog Verification of a 4-Bit Counter
 
-Status: Implementation complete; simulator execution pending.
+**Status:** Verified in Aldec Riviera Pro on EDA Playground. All 126 checks passed with zero errors.
+
+[Run the live simulation on EDA Playground](https://www.edaplayground.com/x/97aV)
 
 Concepts demonstrated:
 
